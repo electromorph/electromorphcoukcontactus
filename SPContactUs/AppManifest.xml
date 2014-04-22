@@ -8,7 +8,7 @@
 >
   <Properties>
     <Title>SPContactUs</Title>
-    <StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
+    <StartPage>~remoteAppUrl/Pages/Default.aspx?{StandardTokens}&amp;SPHostTitle={HostTitle}</StartPage>
   </Properties>
 
   <AppPrincipal>

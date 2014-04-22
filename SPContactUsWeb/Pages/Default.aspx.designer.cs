@@ -22,58 +22,13 @@ namespace SPContactUsWeb.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblName control.
+        /// pnlSendEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
-        
-        /// <summary>
-        /// txtName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
-        
-        /// <summary>
-        /// txtNameRequiredValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtNameRequiredValidator;
-        
-        /// <summary>
-        /// lblSubject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubject;
-        
-        /// <summary>
-        /// txtSubject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubject;
-        
-        /// <summary>
-        /// txtSubjectRequiredValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtSubjectRequiredValidator;
+        protected global::System.Web.UI.WebControls.Panel pnlSendEmail;
         
         /// <summary>
         /// lblEmail control.
@@ -148,6 +103,15 @@ namespace SPContactUsWeb.Pages {
         protected global::System.Web.UI.WebControls.Label lblDisplay;
         
         /// <summary>
+        /// lblFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFileUpload;
+        
+        /// <summary>
         /// FileUploadControl control.
         /// </summary>
         /// <remarks>
@@ -157,21 +121,48 @@ namespace SPContactUsWeb.Pages {
         protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
         
         /// <summary>
-        /// Button1 control.
+        /// SendEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button SendEmail;
         
         /// <summary>
-        /// lblMessage control.
+        /// pnlEmailSent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Panel pnlEmailSent;
+        
+        /// <summary>
+        /// lblSucceeded control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSucceeded;
+        
+        /// <summary>
+        /// pnlEmailFailed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlEmailFailed;
+        
+        /// <summary>
+        /// lblFailed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFailed;
     }
 }

@@ -17,25 +17,27 @@ namespace SPContactUsWeb.Pages
             // The following code gets the client context and Title property by using TokenHelper.
             // To access other properties, you may need to request permissions on the host web.
 
-            var contextToken = TokenHelper.GetContextTokenFromRequest(Page.Request);
-            var hostWeb = Page.Request["SPHostUrl"];
+            //var contextToken = TokenHelper.GetContextTokenFromRequest(Page.Request);
+            //var hostWeb = Page.Request["SPHostUrl"];
 
-            using (var clientContext = TokenHelper.GetClientContextWithContextToken(hostWeb, contextToken, Request.Url.Authority))
-            {
-                clientContext.Load(clientContext.Web, web => web.Title);
-                clientContext.ExecuteQuery();
-                Response.Write(clientContext.Web.Title);
-            }
+            //using (var clientContext = TokenHelper.GetClientContextWithContextToken(hostWeb, contextToken, Request.Url.Authority))
+            //{
+            //    clientContext.Load(clientContext.Web, web => web.Title);
+            //    clientContext.ExecuteQuery();
+            //    Response.Write(clientContext.Web.Title);
+            //}
         }
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
-            var mailTo = new MailAddress(txtEmail.Text, txtName.Text);
-            var mailFrom = new MailAddress(ConfigurationManager.AppSettings["sendEmailFromAddress"] ?? string.Empty, ConfigurationManager.AppSettings["sendEmailFromName"] ?? string.Empty);
+            var sendFromAddress = ConfigurationManager.AppSettings["sendEmailFromAddress"] ?? string.Empty;
+            var sendFromName = ConfigurationManager.AppSettings["sendEmailFromName"] ?? string.Empty;
+            var mailTo = new MailAddress(sendFromAddress);
+            var mailFrom = new MailAddress(sendFromAddress, sendFromName);
             MailMessage mm = new MailMessage(mailFrom, mailTo);
 
-            mm.Subject = txtSubject.Text;
-            mm.Body = "Name: " + txtName.Text + "<br /><br />Email: " + txtEmail.Text + "<br />" + txtBody.Text;
+            mm.Subject = "Contact Electromorph - " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+            mm.Body = "<br /><br />Email: " + txtEmail.Text + "<br />" + txtBody.Text;
             if (FileUploadControl.HasFile)
             {
                 string FileName = System.IO.Path.GetFileName(FileUploadControl.PostedFile.FileName);
@@ -51,8 +53,16 @@ namespace SPContactUsWeb.Pages
             smtp.UseDefaultCredentials = true;
             smtp.Credentials = NetworkCred;
             smtp.Port = 587;
-            smtp.Send(mm);
-            lblMessage.Text = "Email Sent SucessFully.";
+            pnlSendEmail.Visible = false; 
+            try
+            {
+                smtp.Send(mm);
+                pnlEmailSent.Visible = true;
+            }
+            catch
+            {
+                pnlEmailFailed.Visible = true;
+            } 
         }
     }
 }

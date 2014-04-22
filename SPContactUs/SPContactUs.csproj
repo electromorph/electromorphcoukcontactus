@@ -45,9 +45,6 @@
     <Content Include="AppIcon.png">
       <OpcRelationship>manifest-icon</OpcRelationship>
     </Content>
-    <Content Include="ContactUs\Elements.xml">
-      <OpcRelationship>feature-elementmanifest</OpcRelationship>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <AppManifestFile Include="AppManifest.xml">
@@ -64,11 +61,6 @@
       <RoleName>SPContactUsWeb</RoleName>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ContactUs\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{6f010e20-f413-487e-a9b7-95f1a2e83bfe}</SharePointProjectItemId>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
